@@ -1,233 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>My Heart is Yours 💖</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Love Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
   <style>
     body {
-      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
-      background-size: 600% 600%;
-      animation: backgroundShift 20s ease infinite;
-      font-family: 'Georgia', serif;
       margin: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
       text-align: center;
+      overflow-x: hidden;
     }
 
-    @keyframes backgroundShift {
+    @keyframes gradientBG {
       0% { background-position: 0% 50%; }
-      25% { background-position: 50% 50%; }
       50% { background-position: 100% 50%; }
-      75% { background-position: 50% 50%; }
       100% { background-position: 0% 50%; }
     }
 
     h1 {
+      margin-top: 50px;
       font-size: 3rem;
-      margin-bottom: 10px;
-      animation: zoomIn 2s ease forwards;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 6px #00000060;
+      position: relative;
     }
 
-    p {
-      font-size: 1.4rem;
-      max-width: 90%;
-      margin: 0 20px 30px;
-      line-height: 1.6;
-      animation: slideUp 3s ease forwards;
-      opacity: 0.9;
+    h1::after {
+      content: "❤️";
+      position: absolute;
+      right: -30px;
+      animation: pulse 1.5s infinite;
     }
 
-    .love-letter {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 20px;
-      width: 80%;
-      max-width: 500px;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
+
+    a.memory-link {
+      margin-top: 30px;
+      padding: 12px 28px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
       font-size: 1.1rem;
-      font-style: italic;
-      margin-top: 30px;
-      animation: fadeInUp 3s ease forwards;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+      transition: background 0.3s ease;
     }
 
-    #heart {
-      width: 140px;
-      height: 140px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: glow 1.5s ease-in-out infinite;
+    a.memory-link:hover {
+      background-color: rgba(255, 255, 255, 0.4);
     }
 
-    .heart {
-      width: 90px;
-      fill: #ff2e63;
-      animation: beat 1.3s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    .night {
+      background: #0b1a2a !important;
+      color: #eee !important;
     }
 
-    footer {
-      margin-top: 30px;
-      font-size: 0.95rem;
-      opacity: 0.7;
-      animation: fadeIn 3s ease forwards;
-    }
-
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      25% { transform: scale(1.3); }
-      50% { transform: scale(1.15); }
-      75% { transform: scale(1.25); }
-    }
-
-    @keyframes glow {
-      0%, 100% { filter: drop-shadow(0 0 4px #ff2e63); }
-      50% { filter: drop-shadow(0 0 20px #ff2e63); }
-    }
-
-    @keyframes zoomIn {
-      from { transform: scale(0); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .floaty {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #fff;
-      opacity: 0.2;
-      clip-path: polygon(50% 0%, 61% 13%, 75% 13%, 87% 25%, 87% 38%, 75% 50%, 50% 75%, 25% 50%, 13% 38%, 13% 25%, 25% 13%, 39% 13%);
-      animation: float 8s infinite ease-in-out;
-    }
-
-    .sparkle {
-      background: #fff;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      opacity: 0.3;
-      animation: sparkleFloat 6s infinite ease-in-out;
-      position: absolute;
-    }
-
-    .floaty:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .floaty:nth-child(2) { left: 30%; animation-delay: 2s; }
-    .floaty:nth-child(3) { left: 60%; animation-delay: 4s; }
-    .floaty:nth-child(4) { left: 80%; animation-delay: 6s; }
-
-    .sparkle:nth-child(5) { left: 20%; animation-delay: 1s; }
-    .sparkle:nth-child(6) { left: 40%; animation-delay: 3s; }
-    .sparkle:nth-child(7) { left: 70%; animation-delay: 5s; }
-
-    @keyframes float {
-      0% { bottom: -30px; transform: translateX(0) rotate(0deg); }
-      50% { transform: translateX(20px) rotate(45deg); }
-      100% { bottom: 110%; transform: translateX(-10px) rotate(90deg); }
-    }
-
-    @keyframes sparkleFloat {
-      0% { bottom: -20px; opacity: 0.1; }
-      50% { bottom: 60%; opacity: 0.4; }
-      100% { bottom: 110%; opacity: 0; }
-    }
-
-    #playBtn {
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.2);
+    button {
+      background: rgba(0, 0, 0, 0.3);
       color: white;
       border: none;
-      border-radius: 20px;
-      margin-top: 15px;
-      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 15px;
       cursor: pointer;
-      backdrop-filter: blur(4px);
-      animation: fadeIn 3s ease forwards;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      transition: background 0.3s ease;
     }
-    #playBtn:hover {
-      background: rgba(255,255,255,0.3);
+
+    button:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Countdown badge */
+    #countdown {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Flip card styles */
+    .flip-card {
+      background-color: transparent;
+      width: 180px;
+      height: 120px;
+      perspective: 1000px;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-front,
+    .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 40px 20px;
+    }
+
+    .image-item {
+      background: white;
+      color: black;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .image-item:hover {
+      transform: scale(1.05);
+    }
+
+    .image-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-item p {
+      padding: 8px;
+      font-size: 0.9rem;
+      text-align: center;
+      background-color: #fff0f5;
+      margin: 0;
+    }
+
+    .petal, .firefly {
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .petal {
+      position: fixed;
+      top: -10px;
+      width: 15px;
+      height: 15px;
+      background-image: url('https://i.imgur.com/4YvX0dG.png');
+      background-size: cover;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .firefly {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: #fffbcc;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #fffbcc;
+      animation: twinkle 4s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: url('https://i.imgur.com/edO0lZC.png') no-repeat center center/contain;
+      animation: floatUp 6s linear infinite;
+      z-index: 998;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-20vh) scale(0.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
+
 <body>
-  <!-- Floating decorations -->
-  <div class="floaty"></div>
-  <div class="floaty"></div>
-  <div class="floaty"></div>
-  <div class="floaty"></div>
+  <h1>Welcome to Our Love Story</h1>
 
-  <div class="sparkle"></div>
-  <div class="sparkle"></div>
-  <div class="sparkle"></div>
+  <a href="memories.html" class="memory-link">🌳 Visit Our Memory Tree</a>
 
-  <!-- Romantic content -->
-  <h1>My Heart is Yours 💖</h1>
-  <p>
-    You’re the sparkle in my eye, the reason my heart races,<br>
-    the warmth in my soul — my forever and always.
-  </p>
+  <button onclick="toggleNight()">🌙 Night Mode</button>
 
-  <div id="heart">
-    <svg class="heart" viewBox="0 0 32 29.6">
-      <path d="M23.6,0c-3.4,0-6.4,2.1-7.6,5.2C14.8,2.1,11.8,0,8.4,0
-               C3.8,0,0,3.8,0,8.4c0,9.3,16,21.2,16,21.2s16-11.9,16-21.2
-               C32,3.8,28.2,0,23.6,0z"/>
-    </svg>
-  </div>
-
-  <div class="love-letter">
-    I don’t need a thousand words or a hundred poems...<br>
-    Just one moment with you is all it takes to feel what love truly is.  
-    Thank you for being my everything 💌
-  </div>
-
-  <footer>With all my love, forever yours ❤️</footer>
-
-  <!-- Background Music -->
-  <audio id="bgMusic" loop>
-    <source src="audio-1745177618759.mp3" type="audio/mpeg">
+  <audio id="bgMusic" autoplay loop hidden>
+    <source src="audio-1745177618759.mp3" type="audio/mpeg" />
+    <source src="backup-song.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 
-  <button id="playBtn" onclick="playMusic()">🎵 Click to Play Music</button>
+  <div class="image-gallery">
+    <div class="image-item"><img src="1stpic.jpg" alt="First Pic"><p>First Pic</p></div>
+    <div class="image-item"><img src="1stdance.jpg" alt="First Dance"><p>First Dance</p></div>
+    <div class="image-item"><img src="1stbike.jpg" alt="First Bike Ride"><p>First Bike Ride</p></div>
+    <div class="image-item"><img src="1sttoyrun2.jpg" alt="First Toy Run"><p>First Toy Run</p></div>
+    <div class="image-item"><img src="1sttoyrun1.jpg" alt="First Toy Run Ride"><p>First Toy Run Ride</p></div>
+    <div class="image-item"><img src="colourrun.jpg" alt="First Colour Run"><p>First Colour Run</p></div>
+  </div>
+
+  <div id="countdown"></div>
+
+  <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 30px;">
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">💬 Click Me</div>
+        <div class="flip-back">"You’re my always and forever."</div>
+      </div>
+    </div>
+  </div>
 
   <script>
-    const music = document.getElementById('bgMusic');
-    function playMusic() {
-      music.play();
-      document.getElementById('playBtn').style.display = 'none';
+    function toggleNight() {
+      document.body.classList.toggle('night');
     }
 
-    // Try autoplay
-    window.addEventListener('load', () => {
-      const playPromise = music.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay failed, show button
-          document.getElementById('playBtn').style.display = 'inline-block';
-        });
+    const targetDate = new Date("Feb 14, 2026 00:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "💍 The Big Day is Here!";
+        return;
       }
-    });
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("countdown").innerHTML = `⏳ Countdown to Proposal: ${days} days left`;
+    }, 1000);
+
+    const createPetal = () => {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.animationDuration = `${5 + Math.random() * 5}s`;
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 10000);
+    };
+    setInterval(createPetal, 500);
+
+    const createFirefly = () => {
+      const fly = document.createElement('div');
+      fly.classList.add('firefly');
+      fly.style.left = `${Math.random() * 100}vw`;
+      fly.style.top = `${Math.random() * 100}vh`;
+      document.body.appendChild(fly);
+      setTimeout(() => fly.remove(), 8000);
+    };
+    setInterval(createFirefly, 400);
+
+    const createHeart = () => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100}vw`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    };
+    setInterval(createHeart, 800);
   </script>
 </body>
+
 </html>

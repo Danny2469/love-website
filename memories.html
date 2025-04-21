@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Memories 🌸</title>
+  <style>
+    body {
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+      background-size: 600% 600%;
+      animation: gradientAnimation 15s ease infinite;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      overflow-y: auto; /* Allow vertical scrolling */
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+      font-weight: 700;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .memory-tree {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 30px;
+      margin-top: 40px;
+      width: 85%;
+      max-width: 700px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(5px);
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .memory-tree h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fffbf5;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      font-weight: 600;
+    }
+
+    .memory-tree ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .memory-tree li {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      animation: fadeInLi 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeInLi {
+      0% { opacity: 0; transform: translateX(-20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .memory-tree li:nth-child(odd) {
+      animation-delay: 0.5s;
+    }
+
+    .memory-tree li:nth-child(even) {
+      animation-delay: 1s;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1.1rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ff9a9e;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Our Memories 🌸</h1>
+
+  <div class="memory-tree">
+    <h2>🌸 Our Memory Tree 🌸</h2>
+    <ul>
+      <li><strong>🌟 First Spark:</strong> The moment our eyes met — a memory etched in forever.</li>
+      <li><strong>🎶 Our Song:</strong> “Steal the Show” — the song that found us during *Elemental* and wrapped our hearts in its melody.</li>
+      <li><strong>🌅 Favorite Sunset:</strong> That perfect sky we shared, hand in hand.</li>
+      <li><strong>🍃 Silent Moments:</strong> Even in the quiet, our hearts whispered to each other.</li>
+      <li><strong>🚤 Future Dreams:</strong> A little cottage, a fireplace and a love that grows deeper each day.</li>
+    </ul>
+
+    <!-- Future Memories -->
+    <h2>🌸 Our Future Memories 🌸</h2>
+    <ul>
+      <li><strong>💍 The Proposal:</strong> A yes that echoed through our souls under a starlit sky.</li>
+      <li><strong>🏡 First Home Together:</strong> Walls filled with laughter, floors kissed by dancing feet.</li>
+      <li><strong>🌍 Dream Trip:</strong> Lost in a new world, but always found in each other.</li>
+      <li><strong>👶 Our Little One:</strong> Tiny fingers wrapped around ours — love reborn.</li>
+      <li><strong>👴 Growing Old (Ongoing):</strong> Rocking chairs, slow sunsets, and hearts still beating in rhythm.</li>
+    </ul>
+  </div>
+
+  <footer>With all my love, forever yours ❤️</footer>
+</body>
+</html>
